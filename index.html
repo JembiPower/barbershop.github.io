@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juan&Benj's Barber</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dekko&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Dekko', cursive;
@@ -11,13 +12,40 @@
             padding: 0;
             background-color: #f9f9f9;
             color: #333;
-            line-height: 1.8;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 80vh;
+            background-image: url('barberia-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin: 20px 0 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
 
         header {
             background-color: #2c3e50;
             color: white;
-            padding: 40px 20px;
+            padding: 20px;
             text-align: center;
         }
 
@@ -134,14 +162,14 @@
             transform: translateY(0);
         }
 
-        /* Personaggi Section */
-        .personaggi-container {
+        /* Team Section */
+        .team-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 30px;
         }
 
-        .personaggio-card {
+        .team-card {
             background: white;
             border-radius: 8px;
             overflow: hidden;
@@ -149,34 +177,42 @@
             transition: transform 0.3s;
         }
 
-        .personaggio-card:hover {
+        .team-card:hover {
             transform: translateY(-5px);
         }
 
-        .personaggio-img {
+        .team-img {
             width: 100%;
             height: 300px;
             object-fit: cover;
         }
 
-        .personaggio-content {
+        .team-content {
             padding: 20px;
         }
 
-        .personaggio-content h3 {
+        .team-content h3 {
             margin-top: 0;
             color: #2c3e50;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
             nav a {
                 float: none;
                 display: block;
                 text-align: left;
             }
             
-            .personaggi-container {
+            .team-container {
                 grid-template-columns: 1fr;
             }
         }
@@ -184,117 +220,183 @@
 </head>
 <body>
 
-    <header>
-        <h1>Juan&Benj's Barber</h1>
-        <p>Un taglio di capelli su misura per te</p>
-    </header>
+    <div class="hero">
+        <div>
+            <h1>Juan&Benj's Barber</h1>
+            <p>L'arte del taglio perfetto a Trieste</p>
+        </div>
+    </div>
 
     <nav>
-        <a href="#barberia">La barberia</a>
-        <a href="#Noi">Noi</a>
-        <a href="#attività">L'attività</a>
+        <a href="#barberia">La Barberia</a>
+        <a href="#team">Il Team</a>
+        <a href="#servizi">Servizi</a>
+        <a href="#orari">Orari</a>
         <a href="#contatti">Contatti</a>
     </nav>
 
-<section id="barberia">
-    <h2>La barberia</h2>
-    <p>
-        Benvenuti da <strong>Juan&Benj's Barber</strong>, il punto di riferimento a Trieste per chi cerca un taglio di capelli 
-        perfetto, una barba curata e un'esperienza da vero barbiere tradizionale. 
-    </p>
-    <p>
-        Il nostro salone unisce l'antica arte della barbieria con uno stile moderno e giovane, creando un ambiente 
-        accogliente dove ogni cliente si sente a proprio agio. Siamo appassionati del nostro lavoro e ci impegniamo 
-        a offrire un servizio di qualità, personalizzato per ogni esigenza.
-    </p>
-    <p>
-        Presso la nostra barberia troverai:
-    </p>
-    <ul>
-        <li>Tagli di capelli su misura per ogni stile e personalità</li>
-        <li>Rasature e rifiniture barba con tecniche tradizionali</li>
-        <li>Trattamenti per la cura della barba con prodotti premium</li>
-        <li>Atmosfera rilassante e professionale</li>
-        <li>Consigli personalizzati per la cura dei capelli e della barba</li>
-    </ul>
-    <p>
-        La nostra filosofia è semplice: ogni cliente merita di uscire dal nostro salone non solo con un ottimo taglio, 
-        ma anche con un'esperienza piacevole che lo faccia sentire al meglio.
-    </p>
-    
-    <div class="gallery">
-        <div class="gallery-item">
-            <img src="barberia da fuori.jpg" alt="Barberia da fuori">
-            <div class="gallery-caption">La nostra sede in Via Soncini</div>
+    <section id="barberia">
+        <h2>La Nostra Barberia</h2>
+        <p>
+            Benvenuti da Juan&Benj's Barber, il punto di riferimento a Trieste per chi cerca un taglio di capelli 
+            perfetto, una barba curata e un'esperienza da vero barbiere tradizionale. 
+        </p>
+        <p>
+            Il nostro salone unisce l'antica arte della barbieria con uno stile moderno e giovane, creando un ambiente 
+            accogliente dove ogni cliente si sente a proprio agio. Siamo appassionati del nostro lavoro e ci impegniamo 
+            a offrire un servizio di qualità, personalizzato per ogni esigenza.
+        </p>
+        
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="barberia-esterno.jpg" alt="Esterno della barberia">
+                <div class="gallery-caption">La nostra sede in Via Soncini</div>
+            </div>
+            <div class="gallery-item">
+                <img src="barberia-interno.jpg" alt="Interno della barberia">
+                <div class="gallery-caption">L'atmosfera del nostro salone</div>
+            </div>
+            <div class="gallery-item">
+                <img src="taglio-capelli.jpg" alt="Taglio di capelli">
+                <div class="gallery-caption">Precisione e attenzione ai dettagli</div>
+            </div>
         </div>
-        <div class="gallery-item">
-            <img src="barberia-interno.jpg" alt="La barberia all'interno">
-            <div class="gallery-caption">L'ambiente accogliente del nostro salone</div>
-        </div>
-        <div class="gallery-item">
-            <img src="taglio-capelli.jpg" alt="Taglio di capelli">
-            <div class="gallery-caption">Precisione e attenzione ai dettagli</div>
-        </div>
-    </div>
-</section>
-    
-    <section id="Noi">
-        <h2>Noi</h2>
-        <div class="personaggi-container">
-            <div class="personaggio-card">
-                <img class="personaggio-img" src="" alt="Eduardo Brotto">
-                <div class="personaggio-content">
+    </section>
+
+    <section id="team">
+        <h2>Il Nostro Team</h2>
+        
+        <div class="team-container">
+            <div class="team-card">
+                <img class="team-img" src="eduardo.jpg" alt="Eduardo Brotto">
+                <div class="team-content">
                     <h3>Eduardo Brotto</h3>
                     <p>
-                        
+                        Eduardo, soprannominato "Juan", è il co-fondatore della barberia con oltre 10 anni di esperienza nel settore. 
+                        Specializzato in tagli classici e moderni, ha lavorato a Milano e Londra prima di tornare a Trieste.
                     </p>
                 </div>
             </div>
             
-            <div class="personaggio-card">
-                <img class="personaggio-img" src="" alt="Benjamin Pow">
-                <div class="personaggio-content">
+            <div class="team-card">
+                <img class="team-img" src="benjamin.jpg" alt="Benjamin Pow">
+                <div class="team-content">
                     <h3>Benjamin Pow</h3>
                     <p>
-                        
+                        Benjamin, detto "Benj", è l'altra metà del duo fondatore. Esperto in rasature tradizionali con rasoio e 
+                        cura della barba, ha perfezionato la sua arte tra Vienna e Barcellona.
                     </p>
                 </div>
             </div>
             
-            <div class="personaggio-card">
-                <img class="personaggio-img" src="" alt="Alessandro">
-                <div class="personaggio-content">
-                    <h3>Alessandro</h3>
+            <div class="team-card">
+                <img class="team-img" src="alessandro.jpg" alt="Alessandro">
+                <div class="team-content">
+                    <h3>Alessandro Rossi</h3>
                     <p>
-                        
+                        Il nostro giovane talento, specializzato in colorazioni e stili contemporanei. 
+                        Con un approccio creativo e attento alle tendenze, è il punto di riferimento per i clienti più fashion.
                     </p>
                 </div>
             </div>
         </div>
+    </section>
+
+    <section id="servizi">
+        <h2>I Nostri Servizi</h2>
+        
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="taglio-uomo.jpg" alt="Taglio uomo">
+                <div class="gallery-caption">Taglio Uomo</div>
+            </div>
+            <div class="gallery-item">
+                <img src="barba.jpg" alt="Cura della barba">
+                <div class="gallery-caption">Cura della Barba</div>
+            </div>
+            <div class="gallery-item">
+                <img src="rasatura.jpg" alt="Rasatura tradizionale">
+                <div class="gallery-caption">Rasatura con rasoio</div>
+            </div>
+        </div>
+        
+        <ul>
+            <li>Taglio Uomo - €25</li>
+            <p>
+                Un taglio su misura che esalta le tue caratteristiche, eseguito con tecniche tradizionali e strumenti professionali. 
+                Include shampoo, massaggio e styling finale.
+            </p>
             
-    <section id="attività">
-        <h2>La nostra attività</h2>
-         <a href="https://www.google.com/maps/dir/?api=1&destination=45.6306204,13.7921445" rel="nofollow noopener" target="_blank">In Via Soncini 3. 34146</a>
-        <p>   
-        Il nostro orario:
+            <li>Cura della Barba - €20</li>
+            <p>
+                Rifinitura e modellatura della barba con tosatrice e forbici, seguita da impacchi caldi, rasatura dei contorni 
+                e trattamento idratante.
+            </p>
+            
+            <li>Rasatura Tradizionale - €30</li>
+            <p>
+                L'arte della rasatura con rasoio a mano libera, come una volta. Include impacchi caldi, oli pre-rasatura, 
+                trattamento lenitivo e idratazione post-rasatura.
+            </p>
+            
+            <li>Taglio Bambino - €15</li>
+            <p>
+                Un'esperienza piacevole per i più piccoli, in un ambiente rilassante con professionisti pazienti e competenti.
+            </p>
+            
+            <li>Pacchetto Completo - €50</li>
+            <p>
+                Il meglio della nostra offerta: taglio, rasatura o cura della barba, trattamento viso e massaggio alle spalle. 
+                Un'esperienza di vero relax.
+            </p>
+        </ul>
+    </section>
+
+    <section id="orari">
+        <h2>Orari e Prenotazioni</h2>
+        <p>
+            Siamo aperti per servirvi nel nostro salone in <a href="https://www.google.com/maps/dir/?api=1&destination=45.6306204,13.7921445" rel="nofollow noopener" target="_blank">Via Soncini 3, 34146 Trieste</a>.
         </p>
+        
         <ul>
             <li>Lunedì: 16:00-19:00</li>
             <li>Martedì: Chiuso</li>
             <li>Mercoledì: Chiuso</li>
             <li>Giovedì: 16:00-19:00</li>
             <li>Venerdì: Chiuso</li>
-            <li>Weekend: variabile.</li>
+            <li>Sabato: 09:00-13:00 / 15:00-19:00</li>
+            <li>Domenica: Chiuso</li>
         </ul>
+        
+        <p>
+            Per prenotazioni: <a href="tel:+3714224986">+371 422 4986</a> (anche WhatsApp)
+        </p>
     </section>
 
     <section id="contatti">
         <h2>Contatti</h2>
         <p>
-            Mettiti in contatto con noi!<br>
-            Email: <a href="mailto:powbenjamin576@gmail.com">powbenjamin576@gmail.com</a><br>
-            Telefono: +371 422 4986<br>
+            Siamo sempre felici di sentire i nostri clienti!<br><br>
+            <strong>Indirizzo:</strong> Via Soncini 3, 34146 Trieste<br>
+            <strong>Telefono:</strong> <a href="tel:+3714224986">+371 422 4986</a><br>
+            <strong>Email:</strong> <a href="mailto:powbenjamin576@gmail.com">powbenjamin576@gmail.com</a><br>
+            <strong>Instagram:</strong> <a href="https://instagram.com/juanbenjbarber" target="_blank">@juanbenjbarber</a>
         </p>
+        
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="social1.jpg" alt="Post Instagram">
+                <div class="gallery-caption">Segui il nostro lavoro</div>
+            </div>
+            <div class="gallery-item">
+                <img src="social2.jpg" alt="Recensioni">
+                <div class="gallery-caption">Le nostre recensioni</div>
+            </div>
+            <div class="gallery-item">
+                <img src="social3.jpg" alt="Eventi">
+                <div class="gallery-caption">Eventi speciali</div>
+            </div>
+        </div>
     </section>
 
 </body>
